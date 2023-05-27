@@ -239,7 +239,7 @@ async function deployContracts({
         poseidonConstants,
       },
     }
-    const { contractTxId } = await warp.createContract.deploy({
+    const { contractTxId } = await warp.use(new DeployPlugin()).createContract.deploy({
       wallet: arweave_wallet,
       initState: JSON.stringify(initialState),
       src: contractSrc,
